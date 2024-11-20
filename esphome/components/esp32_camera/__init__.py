@@ -77,6 +77,7 @@ FRAME_SIZES = {
     "PFHD": ESP32CameraFrameSize.ESP32_CAMERA_SIZE_1080X1920,
     "2560X1920": ESP32CameraFrameSize.ESP32_CAMERA_SIZE_2560X1920,
     "QSXGA": ESP32CameraFrameSize.ESP32_CAMERA_SIZE_2560X1920,
+    "5MP": ESP32CameraFrameSize.ESP32_CAMERA_SIZE_2592x1944,
 }
 ESP32GainControlMode = esp32_camera_ns.enum("ESP32GainControlMode")
 ENUM_GAIN_CONTROL_MODE = {
@@ -297,7 +298,7 @@ async def to_code(config):
         add_idf_component(
             name="esp32-camera",
             repo="https://github.com/espressif/esp32-camera.git",
-            ref="v2.0.9",
+            ref="v2.0.15",
         )
 
     for conf in config.get(CONF_ON_STREAM_START, []):

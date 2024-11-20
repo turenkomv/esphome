@@ -114,6 +114,8 @@ void ESP32Camera::dump_config() {
       break;
     case FRAMESIZE_QSXGA:
       ESP_LOGCONFIG(TAG, "  Resolution: 2560x1920 (QSXGA)");
+    case FRAMESIZE_5MP:
+      ESP_LOGCONFIG(TAG, "  Resolution: 2592x1944 (5MP)");
       break;
     default:
       break;
@@ -305,6 +307,8 @@ void ESP32Camera::set_frame_size(ESP32CameraFrameSize size) {
       break;
     case ESP32_CAMERA_SIZE_2560X1920:
       this->config_.frame_size = FRAMESIZE_QSXGA;
+    case ESP32_CAMERA_SIZE_2592x1944:
+      this->config_.frame_size = FRAMESIZE_5MP;
       break;
   }
 }
